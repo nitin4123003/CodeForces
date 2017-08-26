@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<conio.h>
+main()
+{
+      int i,j,k,sum1=1,n,sum2=2,a[101],count1,count2,t;
+      scanf("%d",&n);
+      for(i=0;i<n;i++)
+      scanf("%d",&a[i]);
+      for(i=0;i<n;i++)
+	  {
+		for(j=0;j<n-1;j++)
+		{
+			if(a[i]<a[j])
+			{
+				t=a[i];
+				a[i]=a[j];
+				a[j]=t;
+			}
+		}
+	  }
+      for(i=0;sum1<=sum2;i++)
+      {
+                            sum1=0;
+                            sum2=0;
+                            j=n-2-i;
+                            k=n-1;
+                            count1=0;
+                            count2=0;
+                            while(j>=0)
+                            {
+                                    sum2+=a[j];
+                                    j--;
+                                    count1++;
+                            }
+                            while(k>=count1)
+                            {
+                                     sum1+=a[k];
+                                     k--;
+                                     count2++;
+                            }
+      }
+      printf("%d",count2);
+      getch();
+}

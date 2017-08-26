@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main()
+{
+    int x,y,a,b,i,j,k,count=0;
+    scanf("%d%d%d%d",&x,&y,&a,&b);
+    for(i=b+1;i<=x;i++)
+    {
+        for(j=b;j<=y;j++)
+        {
+            if(i<=j)
+            continue;
+            else
+            count++;
+        }
+    }
+    printf("%d\n",count);
+    if(count!=0)
+    {
+                for(j=b+1;j<=x;j++)
+                {
+                    for(k=b;k<=y;k++)
+                    {
+                        if(j<=k)
+                        continue;
+                        else
+                        printf("%d\t%d\n",j,k);
+                    }
+                }
+    }    
+    getch();
+}        

@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int i,j,a[1000],count=0,flag=0,n;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    for(i=1;i<n;i++)
+    {
+                    for(j=0;j<i;j++)
+                    {
+                                    if(a[i]>a[j])
+                                    flag=1;
+                                    else
+                                    {flag=0;
+                                    break;}
+                    }
+                    if(flag==1)
+                    count++;
+    }
+    for(i=1;i<n;i++)
+    {
+                    for(j=0;j<i;j++)
+                    {
+                                    if(a[i]<a[j])
+                                    flag=1;
+                                    else
+                                    {flag=0;
+                                    break;}
+                    }
+                    if(flag==1)
+                    count++;
+    }
+    printf("%d",count);
+    getch();
+}

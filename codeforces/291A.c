@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main()
+{
+    int n,id[1000],i,j,count=0,flag=1,k;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    scanf("%d",&id[i]);
+    for(i=0;i<n;i++)
+    {
+        if(id[i]==0)
+        continue;
+        else
+        {
+            for(j=i+1;j<n;j++)
+            {
+                if(id[j]==id[i])
+                {
+                    flag=1;
+                    count++;
+                    break;
+                }
+            }
+        }
+        for(k=j+1;k<n;k++)
+        {
+            if(id[k]==id[j])
+            {
+                flag=-1;
+                break;
+            }
+        }
+        if(flag==-1)
+        break;
+    }
+    if(flag==1)
+    printf("%d",count);
+    else if(flag==-1)
+    printf("-1");
+    getch();
+}
